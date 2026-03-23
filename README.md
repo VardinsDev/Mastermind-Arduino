@@ -19,11 +19,11 @@ A simple color-sequence memory game built with an Arduino Uno R4 WiFi, an RGB LE
 
 | Component | Quantity |
 |-----------|----------|
-| Arduino Uno R4 WiFi | 1 |
-| Breadboard | 1 |
-| RGB LED (common cathode) | 1 |
-| 220Ω resistor | 3 |
-| Tactile push button | 5 |
+| Arduino Uno R4 WiFi | 1        |
+| Breadboard | 1        |
+| RGB LED (common cathode) | 1        |
+| 220Ω resistor | 8        |
+| Tactile push button | 5        |
 
 ---
 
