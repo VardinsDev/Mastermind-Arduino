@@ -26,7 +26,14 @@ int buttonPins[5] = {3, 4, 5, 6, 7};
 
 String colors[4];
 
-String colorState;
+Color colorState;
+
+enum Color {
+    RED,
+    BLUE,
+    GREEN,
+    YELLOW
+};
 
 void setColor(const int RED_VALUE, const int GREEN_VALUE, const int BLUE_VALUE) {
     analogWrite(RED_PIN, RED_VALUE);
@@ -57,28 +64,28 @@ void loop() {
         if (redButtonState != lastRedState) {
             if (redButtonState == LOW) {
                 setColor(255, 0, 0);
-                colorState = "red";
+                colorState = RED;
                 Serial.println("Red Button Press");
             }
         }
         if (greenButtonState != lastGreenState) {
             if (greenButtonState == LOW) {
                 setColor(0, 255, 0);
-                colorState = "green";
+                colorState = GREEN;
                 Serial.println("Green Button Press");
             }
         }
         if (blueButtonState != lastBlueState) {
             if (blueButtonState == LOW) {
                 setColor(0, 0, 255);
-                colorState = "blue";
+                colorState = BLUE;
                 Serial.println("Blue Button Press");
             }
         }
         if (yellowButtonState != lastYellowState) {
             if (yellowButtonState == LOW) {
                 setColor(255, 255, 0);
-                colorState = "yellow";
+                colorState = YELLOW;
                 Serial.println("Yellow Button Press");
             }
         }
@@ -98,11 +105,11 @@ void loop() {
         lastSubmitState = submitButtonState;
     } else if (submit == 4) {
         delay(300);
-        for (const auto & color : colors) {
-            if (color == "red")    setColor(255, 0, 0);
-            if (color == "green")  setColor(0, 255, 0);
-            if (color == "blue")   setColor(0, 0, 255);
-            if (color == "yellow") setColor(255, 255, 0);
+        for (const Colors & color : colors) {
+            if (color == RED)    setColor(255, 0, 0);
+            if (color == GREEN)  setColor(0, 255, 0);
+            if (color == BLUE)   setColor(0, 0, 255);
+            if (color == YELLOW) setColor(255, 255, 0);
             delay(500);
             setColor(0, 0, 0); // brief off between colors
             delay(100);
