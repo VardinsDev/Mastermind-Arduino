@@ -105,7 +105,7 @@ void loop() {
         lastSubmitState = submitButtonState;
     } else if (submit == 4) {
         delay(300);
-        for (const Colors & color : colors) {
+        for (const Color & color : colors) {
             if (color == RED)    setColor(255, 0, 0);
             if (color == GREEN)  setColor(0, 255, 0);
             if (color == BLUE)   setColor(0, 0, 255);
