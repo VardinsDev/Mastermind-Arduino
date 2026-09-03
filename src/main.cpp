@@ -18,22 +18,22 @@ PinStatus lastBlueState;
 PinStatus lastYellowState;
 PinStatus lastSubmitState;
 
-int submit = 0;
-
-int ledPins[3] = {9, 10, 11};
-
-int buttonPins[5] = {3, 4, 5, 6, 7};
-
-String colors[4];
-
-Color colorState;
-
 enum Color {
     RED,
     BLUE,
     GREEN,
     YELLOW
 };
+
+int submit = 0;
+
+int ledPins[3] = {9, 10, 11};
+
+int buttonPins[5] = {3, 4, 5, 6, 7};
+
+Color colors[4];
+
+Color colorState;
 
 void setColor(const int RED_VALUE, const int GREEN_VALUE, const int BLUE_VALUE) {
     analogWrite(RED_PIN, RED_VALUE);
